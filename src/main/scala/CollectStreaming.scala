@@ -17,13 +17,13 @@ object CollectStreaming{
 
   def main(args: Array[String]) {
     // Process program arguments and set properties
-//    if (args.length < 3) {
-//      System.err.println("Usage: " + this.getClass.getSimpleName +
-//        "<outputDirectory> <numTweetsToCollect> <intervalInSeconds> <partitionsEachInterval>")
-//      System.exit(1)
-//    }
-//    val Array(outputDirectory, Utils.IntParam(numTweetsToCollect),  Utils.IntParam(intervalSecs), Utils.IntParam(partitionsEachInterval)) =
-//      Utils.parseCommandLineWithTwitterCredentials(args)
+    //    if (args.length < 3) {
+    //      System.err.println("Usage: " + this.getClass.getSimpleName +
+    //        "<outputDirectory> <numTweetsToCollect> <intervalInSeconds> <partitionsEachInterval>")
+    //      System.exit(1)
+    //    }
+    //    val Array(outputDirectory, Utils.IntParam(numTweetsToCollect),  Utils.IntParam(intervalSecs), Utils.IntParam(partitionsEachInterval)) =
+    //      Utils.parseCommandLineWithTwitterCredentials(args)
     val outputDir = new File("./temp")
     if (outputDir.exists()) {
       System.err.println("ERROR - %s already exists: delete or specify another directory")
