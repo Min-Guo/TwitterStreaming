@@ -1,0 +1,3 @@
+submit spark job command:
+
+spark-submit --class className --master local[8] jarfile
