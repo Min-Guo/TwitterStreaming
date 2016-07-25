@@ -68,22 +68,22 @@ object CollectStreaming{
       .setOAuthConsumerKey("dvUkoBr8N3kePgtaNXgFqIW2E")
       .setOAuthConsumerSecret("6Yix2c6gn5oGbOcdDsIgLkLy4EoJvjdArl2wcVnJT2hkdJBeA0").build())))
 
-
     tweetStream.foreachRDD((rdd, time) => {
       val count = rdd.count()
       val textTagPair = rdd.map(status => (status.getText(), status.getHashtagEntities().mkString(" ")))
       val tweetsSentimentPair = textTagPair.map(record => (record._1, mainSentiment(record._1)))
       tweetsSentimentPair.foreach(pair => println(pair._1 + "~~~~~~~~" + pair._2))
       if (count > 0) {
-//        val outputRDD = tweetsSentimentPair.repartition(5)
-//        outputRDD.saveAsTextFile("./temp" + "/tweets_" + time.milliseconds.toString)
+        val outputRDD = tweetsSentimentPair.repartition(5)
+        outputRDD.saveAsTextFile("./temp" + "/tweets_" + time.milliseconds.toString)
         numTweetsCollected += count
-        if (numTweetsCollected > 10000) {
+        if (numTweetsCollected > args(0).toInt) {
           System.exit(0)
         }
       }
     })
     ssc.start()
     ssc.awaitTermination()
+    sc.stop()
   }
 }
