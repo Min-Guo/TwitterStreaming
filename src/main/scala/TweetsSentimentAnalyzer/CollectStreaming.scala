@@ -15,6 +15,7 @@ import edu.stanford.nlp.ling.CoreAnnotations
 import edu.stanford.nlp.neural.rnn.RNNCoreAnnotations
 import edu.stanford.nlp.pipeline.{Annotation, StanfordCoreNLP}
 import edu.stanford.nlp.sentiment.SentimentCoreAnnotations
+import twitter4j.FilterQuery
 
 import scala.collection.convert.wrapAll._
 
@@ -66,10 +67,12 @@ object CollectStreaming{
     val tweetStream = TwitterUtils.createStream(ssc, Some(new OAuthAuthorization(new ConfigurationBuilder().setOAuthAccessToken("2523499370-jKz9tm4RWh96HcNs1G6kN5wMsUeuT3eJXSGoiAV")
       .setOAuthAccessTokenSecret("Wy29SE0LZBL2xoHo3mAv17e4mSNYK18Hfh59dzDSUzW9i")
       .setOAuthConsumerKey("dvUkoBr8N3kePgtaNXgFqIW2E")
-      .setOAuthConsumerSecret("6Yix2c6gn5oGbOcdDsIgLkLy4EoJvjdArl2wcVnJT2hkdJBeA0").build())))
+      .setOAuthConsumerSecret("6Yix2c6gn5oGbOcdDsIgLkLy4EoJvjdArl2wcVnJT2hkdJBeA0").build())), Array("#"))
+
 
     tweetStream.foreachRDD((rdd, time) => {
       val count = rdd.count()
+//      val filterRdd = rdd.filter(status => status.getPlace().getCountryCode().toLowerCase.equals("us"))
       val textTagPair = rdd.map(status => (status.getText(), status.getHashtagEntities().mkString(" ")))
       val tweetsSentimentPair = textTagPair.map(record => (record._1, mainSentiment(record._1)))
       tweetsSentimentPair.foreach(pair => println(pair._1 + "~~~~~~~~" + pair._2))
