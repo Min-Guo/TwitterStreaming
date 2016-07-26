@@ -67,15 +67,22 @@ object CollectStreaming{
     val tweetStream = TwitterUtils.createStream(ssc, Some(new OAuthAuthorization(new ConfigurationBuilder().setOAuthAccessToken("2523499370-jKz9tm4RWh96HcNs1G6kN5wMsUeuT3eJXSGoiAV")
       .setOAuthAccessTokenSecret("Wy29SE0LZBL2xoHo3mAv17e4mSNYK18Hfh59dzDSUzW9i")
       .setOAuthConsumerKey("dvUkoBr8N3kePgtaNXgFqIW2E")
-      .setOAuthConsumerSecret("6Yix2c6gn5oGbOcdDsIgLkLy4EoJvjdArl2wcVnJT2hkdJBeA0").build())), Array("#"))
+      .setOAuthConsumerSecret("6Yix2c6gn5oGbOcdDsIgLkLy4EoJvjdArl2wcVnJT2hkdJBeA0").build())))
+
+
+//    val tweets = tweetStream.filter {t =>
+//      val tags = t.getText.split(" ").filter(_.startsWith("#")).map(_.toLowerCase)
+//      tags.contains("#java") || tags.contains("#python")
+//    }
 
 
     tweetStream.foreachRDD((rdd, time) => {
       val count = rdd.count()
-//      val filterRdd = rdd.filter(status => status.getPlace().getCountryCode().toLowerCase.equals("us"))
-      val textTagPair = rdd.map(status => (status.getText(), status.getHashtagEntities().mkString(" ")))
-      val tweetsSentimentPair = textTagPair.map(record => (record._1, mainSentiment(record._1)))
-      tweetsSentimentPair.foreach(pair => println(pair._1 + "~~~~~~~~" + pair._2))
+      val hashTagRdd = rdd.filter(status => !status.getHashtagEntities().isEmpty)
+//      val filterRdd = hashTagRdd.filter(status => status.getPlace().getCountryCode().toLowerCase.equals("us"))
+      val textTagPair = hashTagRdd.map(status => (status.getText(), status.getHashtagEntities()(0).getText()))
+      val tweetsSentimentPair = textTagPair.map(record => (record._2, mainSentiment(record._1)))
+      textTagPair.foreach(pair => println(pair._1 + "~~~~~~~~" + pair._2))
       if (count > 0) {
         val outputRDD = tweetsSentimentPair.repartition(5)
         outputRDD.saveAsTextFile("./temp" + "/tweets_" + time.milliseconds.toString)
