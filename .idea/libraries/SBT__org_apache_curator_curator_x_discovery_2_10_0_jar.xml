@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="SBT: org.apache.curator:curator-x-discovery:2.10.0:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.curator/curator-x-discovery/bundles/curator-x-discovery-2.10.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.curator/curator-x-discovery/srcs/curator-x-discovery-2.10.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

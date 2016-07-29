@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="SBT: io.druid:druid-aws-common:0.9.1:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/io.druid/druid-aws-common/jars/druid-aws-common-0.9.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/io.druid/druid-aws-common/srcs/druid-aws-common-0.9.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

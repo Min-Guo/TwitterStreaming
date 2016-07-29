@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="SBT: org.scalaj:scalaj-time_2.10:0.5:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.scalaj/scalaj-time_2.10/jars/scalaj-time_2.10-0.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.scalaj/scalaj-time_2.10/srcs/scalaj-time_2.10-0.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

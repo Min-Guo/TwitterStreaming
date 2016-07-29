@@ -1,0 +1,202 @@
+[0m[[0minfo[0m] [0mLoading project definition from /Users/Min/NYU/TwitterStreaming/project[0m
+[0m[[0minfo[0m] [0mSet current project to Twitter_Streaming (in build file:/Users/Min/NYU/TwitterStreaming/)[0m
+[0m[[0minfo[0m] [0m*:clean = Task[Unit][0m
+[0m[[0minfo[0m] [0m  +-*:clean::streams = Task[sbt.std.TaskStreams[sbt.Init$ScopedKey[_ <: Any]]][0m
+[0m[[0minfo[0m] [0m  | +-*/*:streamsManager = Task[sbt.std.Streams[sbt.Init$ScopedKey[_ <: Any]]][0m
+[0m[[0minfo[0m] [0m  | [0m
+[0m[[0minfo[0m] [0m  +-*:cleanFiles = List(/Users/Min/NYU/TwitterStreaming/lib_managed, /Users/Min/NYU/TwitterStreaming/target)[0m
+[0m[[0minfo[0m] [0m  | +-{.}/*:managedDirectory = lib_managed[0m
+[0m[[0minfo[0m] [0m  | +-*:target = target[0m
+[0m[[0minfo[0m] [0m  |   +-*:baseDirectory = /Users/Min/NYU/TwitterStreaming[0m
+[0m[[0minfo[0m] [0m  |     +-*:thisProject = Project(id twitterstreaming, base: /Users/Min/NYU/TwitterStreaming, configurations: List(compile, runtime, test, provided, optional), plugins: List(<none>), autoPlugins: List(sbt.plugins.CorePlu..[0m
+[0m[[0minfo[0m] [0m  |     [0m
+[0m[[0minfo[0m] [0m  +-*:cleanKeepFiles = List(/Users/Min/NYU/TwitterStreaming/target/.history)[0m
+[0m[[0minfo[0m] [0m  | +-*:history = Some(/Users/Min/NYU/TwitterStreaming/target/.history)[0m
+[0m[[0minfo[0m] [0m  |   +-*:target = target[0m
+[0m[[0minfo[0m] [0m  |     +-*:baseDirectory = /Users/Min/NYU/TwitterStreaming[0m
+[0m[[0minfo[0m] [0m  |       +-*:thisProject = Project(id twitterstreaming, base: /Users/Min/NYU/TwitterStreaming, configurations: List(compile, runtime, test, provided, optional), plugins: List(<none>), autoPlugins: List(sbt.plugins.CoreP..[0m
+[0m[[0minfo[0m] [0m  |       [0m
+[0m[[0minfo[0m] [0m  +-*:ivyModule = Task[sbt.IvySbt#sbt.IvySbt$Module][0m
+[0m[[0minfo[0m] [0m    +-*:ivySbt = Task[sbt.IvySbt][0m
+[0m[[0minfo[0m] [0m    | +-*/*:credentials = Task[scala.collection.Seq[sbt.Credentials]][0m
+[0m[[0minfo[0m] [0m    | +-*:ivyConfiguration = Task[sbt.IvyConfiguration][0m
+[0m[[0minfo[0m] [0m    | | +-*/*:appConfiguration = xsbt.boot.AppConfiguration@d653e41[0m
+[0m[[0minfo[0m] [0m    | | +-*:fullResolvers = Task[scala.collection.Seq[sbt.Resolver]][0m
+[0m[[0minfo[0m] [0m    | | | +-*:bootResolvers = Task[scala.Option[scala.collection.Seq[sbt.Resolver]]][0m
+[0m[[0minfo[0m] [0m    | | | | +-*/*:appConfiguration = xsbt.boot.AppConfiguration@d653e41[0m
+[0m[[0minfo[0m] [0m    | | | | [0m
+[0m[[0minfo[0m] [0m    | | | +-*:externalResolvers = Task[scala.collection.Seq[sbt.Resolver]][0m
+[0m[[0minfo[0m] [0m    | | | | +-*:appResolvers = Some(ArrayBuffer(FileRepository(local,FileConfiguration(true,None),Patterns(ivyPatterns=List(${ivy.home}/local/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[..[0m
+[0m[[0minfo[0m] [0m    | | | | | +-*/*:appConfiguration = xsbt.boot.AppConfiguration@d653e41[0m
+[0m[[0minfo[0m] [0m    | | | | | [0m
+[0m[[0minfo[0m] [0m    | | | | +-*/*:resolvers = List()[0m
+[0m[[0minfo[0m] [0m    | | | | [0m
+[0m[[0minfo[0m] [0m    | | | +-*:overrideBuildResolvers = false[0m
+[0m[[0minfo[0m] [0m    | | | | +-*/*:appConfiguration = xsbt.boot.AppConfiguration@d653e41[0m
+[0m[[0minfo[0m] [0m    | | | | [0m
+[0m[[0minfo[0m] [0m    | | | +-*:projectResolver = Task[sbt.Resolver][0m
+[0m[[0minfo[0m] [0m    | | | | +-*:projectDescriptors = Task[scala.collection.immutable.Map[org.apache.ivy.core.module.id.ModuleRevisionId, org.apache.ivy.core.module.descriptor.ModuleDescriptor]][0m
+[0m[[0minfo[0m] [0m    | | | |   +-*/*:buildDependencies = sbt.BuildDependencies@12952aff[0m
+[0m[[0minfo[0m] [0m    | | | |   +-*:projectDescriptors::streams = Task[sbt.std.TaskStreams[sbt.Init$ScopedKey[_ <: Any]]][0m
+[0m[[0minfo[0m] [0m    | | | |   | +-*/*:streamsManager = Task[sbt.std.Streams[sbt.Init$ScopedKey[_ <: Any]]][0m
+[0m[[0minfo[0m] [0m    | | | |   | [0m
+[0m[[0minfo[0m] [0m    | | | |   +-*/*:settingsData = Task[sbt.Settings[sbt.Scope]][0m
+[0m[[0minfo[0m] [0m    | | | |   +-*:thisProjectRef = ProjectRef(file:/Users/Min/NYU/TwitterStreaming/,twitterstreaming)[0m
+[0m[[0minfo[0m] [0m    | | | |   [0m
+[0m[[0minfo[0m] [0m    | | | +-*/*:sbtPlugin = false[0m
+[0m[[0minfo[0m] [0m    | | | +-*/*:sbtResolver = URLRepository(typesafe-ivy-releases,Patterns(ivyPatterns=List(https://repo.typesafe.com/typesafe/ivy-releases/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[ty..[0m
+[0m[[0minfo[0m] [0m    | | | [0m
+[0m[[0minfo[0m] [0m    | | +-*:ivyConfiguration::streams = Task[sbt.std.TaskStreams[sbt.Init$ScopedKey[_ <: Any]]][0m
+[0m[[0minfo[0m] [0m    | | | +-*/*:streamsManager = Task[sbt.std.Streams[sbt.Init$ScopedKey[_ <: Any]]][0m
+[0m[[0minfo[0m] [0m    | | | [0m
+[0m[[0minfo[0m] [0m    | | +-*:ivyPaths = sbt.IvyPaths@3b78c683[0m
+[0m[[0minfo[0m] [0m    | | | +-*/*:appConfiguration = xsbt.boot.AppConfiguration@d653e41[0m
+[0m[[0minfo[0m] [0m    | | | +-*:baseDirectory = /Users/Min/NYU/TwitterStreaming[0m
+[0m[[0minfo[0m] [0m    | | |   +-*:thisProject = Project(id twitterstreaming, base: /Users/Min/NYU/TwitterStreaming, configurations: List(compile, runtime, test, provided, optional), plugins: List(<none>), autoPlugins: List(sbt.plugins.Cor..[0m
+[0m[[0minfo[0m] [0m    | | |   [0m
+[0m[[0minfo[0m] [0m    | | +-*/*:moduleConfigurations = List()[0m
+[0m[[0minfo[0m] [0m    | | +-*/*:offline = false[0m
+[0m[[0minfo[0m] [0m    | | +-*:otherResolvers = List(cache:publish-m2-local: /Users/Min/.m2/repository)[0m
+[0m[[0minfo[0m] [0m    | | | +-*/*:publishTo = None[0m
+[0m[[0minfo[0m] [0m    | | | [0m
+[0m[[0minfo[0m] [0m    | | +-*:target = target[0m
+[0m[[0minfo[0m] [0m    | | | +-*:baseDirectory = /Users/Min/NYU/TwitterStreaming[0m
+[0m[[0minfo[0m] [0m    | | |   +-*:thisProject = Project(id twitterstreaming, base: /Users/Min/NYU/TwitterStreaming, configurations: List(compile, runtime, test, provided, optional), plugins: List(<none>), autoPlugins: List(sbt.plugins.Cor..[0m
+[0m[[0minfo[0m] [0m    | | |   [0m
+[0m[[0minfo[0m] [0m    | | +-*/*:checksums = WrappedArray(sha1, md5)[0m
+[0m[[0minfo[0m] [0m    | | +-*:updateOptions = sbt.UpdateOptions@8aa02b76[0m
+[0m[[0minfo[0m] [0m    | |   +-*/*:updateOptions = sbt.UpdateOptions@8aa02b76[0m
+[0m[[0minfo[0m] [0m    | |   [0m
+[0m[[0minfo[0m] [0m    | +-*:ivySbt::streams = Task[sbt.std.TaskStreams[sbt.Init$ScopedKey[_ <: Any]]][0m
+[0m[[0minfo[0m] [0m    |   +-*/*:streamsManager = Task[sbt.std.Streams[sbt.Init$ScopedKey[_ <: Any]]][0m
+[0m[[0minfo[0m] [0m    |   [0m
+[0m[[0minfo[0m] [0m    +-*:moduleSettings = Task[sbt.ModuleSettings][0m
+[0m[[0minfo[0m] [0m      +-*:allDependencies = Task[scala.collection.Seq[sbt.ModuleID]][0m
+[0m[[0minfo[0m] [0m      | +-*:ivyScala = Some(IvyScala(2.10.4,2.10,List(),true,false,false,org.scala-lang))[0m
+[0m[[0minfo[0m] [0m      | | +-*/*:sbtPlugin = false[0m
+[0m[[0minfo[0m] [0m      | | +-*/*:scalaHome = None[0m
+[0m[[0minfo[0m] [0m      | | +-*/*:scalaOrganization = org.scala-lang[0m
+[0m[[0minfo[0m] [0m      | | +-*:scalaBinaryVersion = 2.10[0m
+[0m[[0minfo[0m] [0m      | | +-*:scalaVersion = 2.10.4[0m
+[0m[[0minfo[0m] [0m      | | [0m
+[0m[[0minfo[0m] [0m      | +-*:libraryDependencies = List(org.scala-lang:scala-library:2.10.4, org.apache.spark:spark-core:1.3.0:provided, org.apache.spark:spark-streaming_2.10:1.6.2:provided, org.apache.spark:spark-streaming-twitter_2.10:..[0m
+[0m[[0minfo[0m] [0m      | | +-*/*:autoScalaLibrary = true[0m
+[0m[[0minfo[0m] [0m      | | +-*/*:managedScalaInstance = true[0m
+[0m[[0minfo[0m] [0m      | | +-*/*:sbtPlugin = false[0m
+[0m[[0minfo[0m] [0m      | | +-*/*:scalaHome = None[0m
+[0m[[0minfo[0m] [0m      | | +-*/*:scalaOrganization = org.scala-lang[0m
+[0m[[0minfo[0m] [0m      | | +-*:scalaVersion = 2.10.4[0m
+[0m[[0minfo[0m] [0m      | | [0m
+[0m[[0minfo[0m] [0m      | +-*/*:managedScalaInstance = true[0m
+[0m[[0minfo[0m] [0m      | +-*:projectDependencies = Task[scala.collection.Seq[sbt.ModuleID]][0m
+[0m[[0minfo[0m] [0m      | | +-*/*:buildDependencies = sbt.BuildDependencies@12952aff[0m
+[0m[[0minfo[0m] [0m      | | +-*/*:settingsData = Task[sbt.Settings[sbt.Scope]][0m
+[0m[[0minfo[0m] [0m      | | +-*:thisProjectRef = ProjectRef(file:/Users/Min/NYU/TwitterStreaming/,twitterstreaming)[0m
+[0m[[0minfo[0m] [0m      | | [0m
+[0m[[0minfo[0m] [0m      | +-*/*:sbtDependency = org.scala-sbt:sbt:0.13.8[0m
+[0m[[0minfo[0m] [0m      | +-*/*:sbtPlugin = false[0m
+[0m[[0minfo[0m] [0m      | +-*/*:scalaHome = None[0m
+[0m[[0minfo[0m] [0m      | +-*/*:scalaOrganization = org.scala-lang[0m
+[0m[[0minfo[0m] [0m      | +-*:scalaVersion = 2.10.4[0m
+[0m[[0minfo[0m] [0m      | [0m
+[0m[[0minfo[0m] [0m      +-*/*:conflictManager = ConflictManager(latest-revision,*,*)[0m
+[0m[[0minfo[0m] [0m      +-*/*:defaultConfiguration = Some(compile)[0m
+[0m[[0minfo[0m] [0m      +-*/*:dependencyOverrides = Set()[0m
+[0m[[0minfo[0m] [0m      +-*/*:excludeDependencies = List()[0m
+[0m[[0minfo[0m] [0m      +-*:ivyConfigurations = List(compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool)[0m
+[0m[[0minfo[0m] [0m      | +-*/*:autoCompilerPlugins = true[0m
+[0m[[0minfo[0m] [0m      | +-*/*:internalConfigurationMap = <function1>[0m
+[0m[[0minfo[0m] [0m      | +-*/*:managedScalaInstance = true[0m
+[0m[[0minfo[0m] [0m      | +-*/*:scalaHome = None[0m
+[0m[[0minfo[0m] [0m      | +-*:thisProject = Project(id twitterstreaming, base: /Users/Min/NYU/TwitterStreaming, configurations: List(compile, runtime, test, provided, optional), plugins: List(<none>), autoPlugins: List(sbt.plugins.CorePlu..[0m
+[0m[[0minfo[0m] [0m      | [0m
+[0m[[0minfo[0m] [0m      +-*:ivyScala = Some(IvyScala(2.10.4,2.10,List(),true,false,false,org.scala-lang))[0m
+[0m[[0minfo[0m] [0m      | +-*/*:sbtPlugin = false[0m
+[0m[[0minfo[0m] [0m      | +-*/*:scalaHome = None[0m
+[0m[[0minfo[0m] [0m      | +-*/*:scalaOrganization = org.scala-lang[0m
+[0m[[0minfo[0m] [0m      | +-*:scalaBinaryVersion = 2.10[0m
+[0m[[0minfo[0m] [0m      | +-*:scalaVersion = 2.10.4[0m
+[0m[[0minfo[0m] [0m      | [0m
+[0m[[0minfo[0m] [0m      +-*/*:ivyValidate = false[0m
+[0m[[0minfo[0m] [0m      +-*/*:ivyXml = [0m
+[0m[[0minfo[0m] [0m      +-*:projectId = twitter_streaming:twitter_streaming:1.0[0m
+[0m[[0minfo[0m] [0m      | +-*/*:apiUrl = None[0m
+[0m[[0minfo[0m] [0m      | +-*:artifacts = List(Artifact(twitter_streaming,pom,pom,None,List(pom),None,Map()), Artifact(twitter_streaming,jar,jar,None,List(compile),None,Map()), Artifact(twitter_streaming,src,jar,Some(sources),List(sources..[0m
+[0m[[0minfo[0m] [0m      | | +-*:makePom::artifact = Artifact(twitter_streaming,pom,pom,None,List(pom),None,Map())[0m
+[0m[[0minfo[0m] [0m      | | | +-*:moduleName = twitter_streaming[0m
+[0m[[0minfo[0m] [0m      | | |   +-*:normalizedName = twitter_streaming[0m
+[0m[[0minfo[0m] [0m      | | |     +-*:name = Twitter_Streaming[0m
+[0m[[0minfo[0m] [0m      | | |     [0m
+[0m[[0minfo[0m] [0m      | | +-*:makePom::publishArtifact = true[0m
+[0m[[0minfo[0m] [0m      | | | +-*/*:publishArtifact = true[0m
+[0m[[0minfo[0m] [0m      | | | +-*/*:publishMavenStyle = true[0m
+[0m[[0minfo[0m] [0m      | | | [0m
+[0m[[0minfo[0m] [0m      | | +-compile:packageBin::artifact = Artifact(twitter_streaming,jar,jar,None,List(compile),None,Map())[0m
+[0m[[0minfo[0m] [0m      | | | +-*/*:artifactClassifier = None[0m
+[0m[[0minfo[0m] [0m      | | | +-compile:configuration = compile[0m
+[0m[[0minfo[0m] [0m      | | | [0m
+[0m[[0minfo[0m] [0m      | | +-*/*:publishArtifact = true[0m
+[0m[[0minfo[0m] [0m      | | +-compile:packageDoc::artifact = Artifact(twitter_streaming,doc,jar,Some(javadoc),List(docs),None,Map())[0m
+[0m[[0minfo[0m] [0m      | | | +-*/*:packageDoc::artifactClassifier = Some(javadoc)[0m
+[0m[[0minfo[0m] [0m      | | | +-compile:configuration = compile[0m
+[0m[[0minfo[0m] [0m      | | | [0m
+[0m[[0minfo[0m] [0m      | | +-*/*:publishArtifact = true[0m
+[0m[[0minfo[0m] [0m      | | +-compile:packageSrc::artifact = Artifact(twitter_streaming,src,jar,Some(sources),List(sources),None,Map())[0m
+[0m[[0minfo[0m] [0m      | | | +-*/*:packageSrc::artifactClassifier = Some(sources)[0m
+[0m[[0minfo[0m] [0m      | | | +-compile:configuration = compile[0m
+[0m[[0minfo[0m] [0m      | | | [0m
+[0m[[0minfo[0m] [0m      | | +-*/*:publishArtifact = true[0m
+[0m[[0minfo[0m] [0m      | | +-test:packageBin::artifact = Artifact(twitter_streaming,jar,jar,Some(tests),List(test),None,Map())[0m
+[0m[[0minfo[0m] [0m      | | | +-*/*:artifactClassifier = None[0m
+[0m[[0minfo[0m] [0m      | | | +-test:configuration = test[0m
+[0m[[0minfo[0m] [0m      | | | [0m
+[0m[[0minfo[0m] [0m      | | +-*/test:publishArtifact = false[0m
+[0m[[0minfo[0m] [0m      | | +-test:packageDoc::artifact = Artifact(twitter_streaming,doc,jar,Some(tests-javadoc),List(docs),None,Map())[0m
+[0m[[0minfo[0m] [0m      | | | +-*/*:packageDoc::artifactClassifier = Some(javadoc)[0m
+[0m[[0minfo[0m] [0m      | | | +-test:configuration = test[0m
+[0m[[0minfo[0m] [0m      | | | [0m
+[0m[[0minfo[0m] [0m      | | +-*/test:publishArtifact = false[0m
+[0m[[0minfo[0m] [0m      | | +-test:packageSrc::artifact = Artifact(twitter_streaming,src,jar,Some(tests-sources),List(sources),None,Map())[0m
+[0m[[0minfo[0m] [0m      | | | +-*/*:packageSrc::artifactClassifier = Some(sources)[0m
+[0m[[0minfo[0m] [0m      | | | +-test:configuration = test[0m
+[0m[[0minfo[0m] [0m      | | | [0m
+[0m[[0minfo[0m] [0m      | | +-*/test:publishArtifact = false[0m
+[0m[[0minfo[0m] [0m      | | [0m
+[0m[[0minfo[0m] [0m      | +-*/*:autoApiMappings = false[0m
+[0m[[0minfo[0m] [0m      | +-*:moduleName = twitter_streaming[0m
+[0m[[0minfo[0m] [0m      | | +-*:normalizedName = twitter_streaming[0m
+[0m[[0minfo[0m] [0m      | |   +-*:name = Twitter_Streaming[0m
+[0m[[0minfo[0m] [0m      | |   [0m
+[0m[[0minfo[0m] [0m      | +-*:organization = twitter_streaming[0m
+[0m[[0minfo[0m] [0m      | | +-*:normalizedName = twitter_streaming[0m
+[0m[[0minfo[0m] [0m      | | | +-*:name = Twitter_Streaming[0m
+[0m[[0minfo[0m] [0m      | | | [0m
+[0m[[0minfo[0m] [0m      | | +-*:thisProject = Project(id twitterstreaming, base: /Users/Min/NYU/TwitterStreaming, configurations: List(compile, runtime, test, provided, optional), plugins: List(<none>), autoPlugins: List(sbt.plugins.CoreP..[0m
+[0m[[0minfo[0m] [0m      | | [0m
+[0m[[0minfo[0m] [0m      | +-*:crossVersion = Binary[0m
+[0m[[0minfo[0m] [0m      | +-*/*:sbtPlugin = false[0m
+[0m[[0minfo[0m] [0m      | +-*/*:sbtBinaryVersion = 0.13[0m
+[0m[[0minfo[0m] [0m      | +-*:scalaBinaryVersion = 2.10[0m
+[0m[[0minfo[0m] [0m      | +-*:version = 1.0[0m
+[0m[[0minfo[0m] [0m      | [0m
+[0m[[0minfo[0m] [0m      +-*:projectInfo = ModuleInfo(Twitter_Streaming,Twitter_Streaming,None,None,List(),twitter_streaming,None,None,List())[0m
+[0m[[0minfo[0m] [0m        +-*:description = Twitter_Streaming[0m
+[0m[[0minfo[0m] [0m        | +-*:name = Twitter_Streaming[0m
+[0m[[0minfo[0m] [0m        | [0m
+[0m[[0minfo[0m] [0m        +-*/*:developers = List()[0m
+[0m[[0minfo[0m] [0m        +-*/*:homepage = None[0m
+[0m[[0minfo[0m] [0m        +-*/*:licenses = List()[0m
+[0m[[0minfo[0m] [0m        +-*:name = Twitter_Streaming[0m
+[0m[[0minfo[0m] [0m        +-*:organizationHomepage = None[0m
+[0m[[0minfo[0m] [0m        | +-*/*:homepage = None[0m
+[0m[[0minfo[0m] [0m        | [0m
+[0m[[0minfo[0m] [0m        +-*:organizationName = twitter_streaming[0m
+[0m[[0minfo[0m] [0m        | +-*:organization = twitter_streaming[0m
+[0m[[0minfo[0m] [0m        |   +-*:normalizedName = twitter_streaming[0m
+[0m[[0minfo[0m] [0m        |   | +-*:name = Twitter_Streaming[0m
+[0m[[0minfo[0m] [0m        |   | [0m
+[0m[[0minfo[0m] [0m        |   +-*:thisProject = Project(id twitterstreaming, base: /Users/Min/NYU/TwitterStreaming, configurations: List(compile, runtime, test, provided, optional), plugins: List(<none>), autoPlugins: List(sbt.plugins.Cor..[0m
+[0m[[0minfo[0m] [0m        |   [0m
+[0m[[0minfo[0m] [0m        +-*/*:scmInfo = None[0m
+[0m[[0minfo[0m] [0m        +-*/*:startYear = None[0m
+[0m[[0minfo[0m] [0m        [0m

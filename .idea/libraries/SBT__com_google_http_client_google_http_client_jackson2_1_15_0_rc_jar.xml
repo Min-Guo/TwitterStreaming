@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="SBT: com.google.http-client:google-http-client-jackson2:1.15.0-rc:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/com.google.http-client/google-http-client-jackson2/jars/google-http-client-jackson2-1.15.0-rc.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/com.google.http-client/google-http-client-jackson2/srcs/google-http-client-jackson2-1.15.0-rc-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

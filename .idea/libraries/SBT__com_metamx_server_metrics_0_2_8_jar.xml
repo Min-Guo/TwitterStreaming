@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="SBT: com.metamx:server-metrics:0.2.8:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/com.metamx/server-metrics/jars/server-metrics-0.2.8.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/com.metamx/server-metrics/srcs/server-metrics-0.2.8-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

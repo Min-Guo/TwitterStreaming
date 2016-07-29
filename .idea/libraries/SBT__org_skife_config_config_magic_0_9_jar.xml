@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="SBT: org.skife.config:config-magic:0.9:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.skife.config/config-magic/jars/config-magic-0.9.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.skife.config/config-magic/srcs/config-magic-0.9-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
