@@ -35,11 +35,11 @@ object MapBeamFactory
     val discoveryPath = "/druid/discovery"
     val dataSource = "tweetsStreaming"
     val dimensions = IndexedSeq("hashTag")
-    val aggregators = Seq(new CountAggregatorFactory("scope"))
+    val aggregators = Seq(new CountAggregatorFactory("score"))
 
     // Expects simpleEvent.timestamp to return a Joda DateTime object.
     DruidBeams
-      .builder[Map[String, Any]]((eventMap: Map[String, Any]) => new DateTime(eventMap("eventTimestamp").asInstanceOf[Long] * 1000))
+      .builder[Map[String, Any]]((eventMap: Map[String, Any]) => eventMap("timestamp").asInstanceOf[DateTime])
       .curator(curator)
       .discoveryPath(discoveryPath)
       .location(DruidLocation(indexService, firehosePattern, dataSource))

@@ -13,7 +13,7 @@ import edu.stanford.nlp.ling.CoreAnnotations
 import edu.stanford.nlp.neural.rnn.RNNCoreAnnotations
 import edu.stanford.nlp.pipeline.{Annotation, StanfordCoreNLP}
 import edu.stanford.nlp.sentiment.SentimentCoreAnnotations
-import org.joda.time.DateTime
+import org.joda.time.{DateTime, DateTimeZone}
 
 import scala.collection.convert.wrapAll._
 
@@ -50,7 +50,10 @@ object CollectStreaming{
 
   //convert tweet string to Map type (key: hashTag, value: sentiment score)
   def streamToMap(stream: String): Map[String, Any] = {
-    stream.split(",").map(_ split ":").map{ case Array(k, v) => (k, v) }.toMap
+    println("StartMapping!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    val res = stream.split(",").map(_ split ":").map{ case Array(k, v) => (k, v) }.toMap
+    res.foreach{case (key, value) => println(key + "--->" + value)}
+    res
   }
 
   def main(args: Array[String]) {
@@ -80,10 +83,12 @@ object CollectStreaming{
 //      val filterRdd = hashTagRdd.filter(status => status.getPlace().getCountryCode().toLowerCase.equals("us"))
       val textTagPair = hashTagRdd.map(status => (status.getText(), status.getHashtagEntities()(0).getText()))
       val tweetsSentimentPair = textTagPair.map(record => (record._2, mainSentiment(record._1)))
-      val tweetString = hashTagRdd.map(status => "HashTag: " + status.getHashtagEntities()(0).getText() + ", " + "Score: " + mainSentiment(status.getText()) + ", eventTimestamp: " + new DateTime(status.getCreatedAt))
+//      val tweetString = hashTagRdd.map(status => "hashTag: " + status.getHashtagEntities()(0).getText() + ", " + "score: " + mainSentiment(status.getText()) + ", eventTimestamp: " + new DateTime(status.getCreatedAt))
+      val tweetsString = hashTagRdd.map(status => Map[String, Any]("hashTag" -> status.getHashtagEntities()(0).getText, "score" -> mainSentiment(status.getText()), "timestamp" -> new DateTime(status.getCreatedAt).withZone(DateTimeZone.UTC)))
       import com.metamx.tranquility.spark.BeamRDD._
       //pass data to druid
-      val tweetMap = tweetString.map(tweet => streamToMap(tweet)).propagate(new MapBeamFactory)
+      tweetsString.propagate(new MapBeamFactory)
+//      val tweetMap = tweetString.map(tweet => streamToMap(tweet)).propagate(new MapBeamFactory)
        textTagPair.foreach(pair => println(pair._1 + "~~~~~~~~" + pair._2))
       if (count > 0) {
         val outputRDD = tweetsSentimentPair.repartition(5)
