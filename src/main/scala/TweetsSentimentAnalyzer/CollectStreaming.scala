@@ -69,18 +69,21 @@ object CollectStreaming{
     val sc = new SparkContext(conf)
     val ssc = new StreamingContext(sc, Seconds(2))
 
+
+
     //set twitter authority to access streaming data
     val tweetStream = TwitterUtils.createStream(ssc, Some(new OAuthAuthorization(new ConfigurationBuilder().setOAuthAccessToken("2523499370-jKz9tm4RWh96HcNs1G6kN5wMsUeuT3eJXSGoiAV")
       .setOAuthAccessTokenSecret("Wy29SE0LZBL2xoHo3mAv17e4mSNYK18Hfh59dzDSUzW9i")
       .setOAuthConsumerKey("dvUkoBr8N3kePgtaNXgFqIW2E")
       .setOAuthConsumerSecret("6Yix2c6gn5oGbOcdDsIgLkLy4EoJvjdArl2wcVnJT2hkdJBeA0").build())))
 
+
     //processing tweets streaming by spark job
     tweetStream.foreachRDD((rdd, time) => {
       val count = rdd.count()
       val hashTagRdd = rdd.filter(status => !status.getHashtagEntities().isEmpty)
       //filter tweets from US.
-//      val filterRdd = hashTagRdd.filter(status => status.getPlace().getCountryCode().toLowerCase.equals("us"))
+//      val enTweet = hashTagRdd.filter(_.getLang == "en")
       val textTagPair = hashTagRdd.map(status => (status.getText(), status.getHashtagEntities()(0).getText()))
       val tweetsSentimentPair = textTagPair.map(record => (record._2, mainSentiment(record._1)))
 //      val tweetString = hashTagRdd.map(status => "hashTag: " + status.getHashtagEntities()(0).getText() + ", " + "score: " + mainSentiment(status.getText()) + ", eventTimestamp: " + new DateTime(status.getCreatedAt))

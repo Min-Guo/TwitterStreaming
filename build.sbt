@@ -10,9 +10,9 @@ mainClass in (Compile,run) := Some("TweetsSentimentAnalyzer.CollectStreaming")
 libraryDependencies ++= Seq(
   "io.druid" % "tranquility-core_2.10" % "0.8.2",
   "io.druid" % "tranquility-spark_2.10" % "0.8.2",
-"org.apache.spark" %% "spark-core" % "1.3.0" % "provided",
+"org.apache.spark" %% "spark-core" % "1.6.2" % "provided",
   "org.apache.spark" % "spark-streaming_2.10" % "1.6.2" % "provided",
-  "org.apache.spark" % "spark-streaming-twitter_2.10" % "1.4.0",
+  "org.apache.spark" % "spark-streaming-twitter_2.10" % "1.6.1",
   "com.google.code.gson" % "gson" % "2.2.4",
   "edu.stanford.nlp" % "stanford-corenlp" % "3.4.1",
   "edu.stanford.nlp" % "stanford-corenlp" % "3.4.1" classifier "models",

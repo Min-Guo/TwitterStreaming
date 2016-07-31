@@ -5,7 +5,6 @@ import com.metamx.tranquility.beam.{Beam, ClusteredBeamTuning}
 import com.metamx.tranquility.druid.{DruidBeams, DruidLocation, DruidRollup, SpecificDruidDimensions}
 import com.metamx.tranquility.spark.BeamFactory
 import io.druid.granularity.QueryGranularity
-import io.druid.query.aggregation.AggregatorFactory;
 import io.druid.query.aggregation.CountAggregatorFactory;
 import org.apache.curator.framework.CuratorFrameworkFactory
 import org.apache.curator.retry.BoundedExponentialBackoffRetry
@@ -25,7 +24,7 @@ object MapBeamFactory
     val logger = Logger.getLogger(classOf[MapBeamFactory])
 
     val curator = CuratorFrameworkFactory.newClient(
-      "ec2-50-16-227-245.compute-1.amazonaws.com:2181",
+      "ec2-54-83-35-212.compute-1.amazonaws.com:2181",
       new BoundedExponentialBackoffRetry(100, 3000, 5)
     )
     logger.info("Create zk connection !!!!!!!!!!!!!!")
@@ -33,7 +32,7 @@ object MapBeamFactory
     val indexService = "druid/overlord"
     val firehosePattern = "druid:firehose:%s"
     val discoveryPath = "/druid/discovery"
-    val dataSource = "tweetsStreaming"
+    val dataSource = "tweet"
     val dimensions = IndexedSeq("hashTag")
     val aggregators = Seq(new CountAggregatorFactory("score"))
 
@@ -47,7 +46,7 @@ object MapBeamFactory
       .tuning(
         ClusteredBeamTuning(
           segmentGranularity = Granularity.HOUR,
-          windowPeriod = new Period("PT20M"),
+          windowPeriod = new Period("PT10M"),
           partitions = 1,
           replicants = 1
         )
