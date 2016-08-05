@@ -29,38 +29,46 @@ object CollectStreaming{
   val pipeline: StanfordCoreNLP = new StanfordCoreNLP(props)
 
   //cacluate tweets sentiment score using stanford nlp library to analysis sentence
-  def mainSentiment(input: String): Sentiment = Option(input) match {
+  def mainSentiment(input: String): Int = Option(input) match {
     case Some(text) if !text.isEmpty => extractSentiment(text)
     case _ => throw new IllegalArgumentException("input can't be null or empty")
   }
 
-  def extractSentiment(text: String): Sentiment = {
+  def extractSentiment(text: String): Int = {
     val (_, sentiment) = extractSentiments(text)
       .maxBy { case (sentence, _) => sentence.length }
     sentiment
   }
 
-  def extractSentiments(text: String): List[(String, Sentiment)] = {
+  def changeScoreRange(origin: Int): Int = origin match {
+    case 0 => -2
+    case 1 => -1
+    case 2 => 0
+    case 3 => 1
+    case 4 => 2
+  }
+
+  def extractSentiments(text: String): List[(String, Int)] = {
     val annotation: Annotation = pipeline.process(text)
     val sentences = annotation.get(classOf[CoreAnnotations.SentencesAnnotation])
     sentences
       .map(sentence => (sentence, sentence.get(classOf[SentimentCoreAnnotations.AnnotatedTree])))
-      .map { case (sentence, tree) => (sentence.toString,Sentiment.toSentiment(RNNCoreAnnotations.getPredictedClass(tree))) }
+      .map { case (sentence, tree) => (sentence.toString, changeScoreRange(RNNCoreAnnotations.getPredictedClass(tree)))}
       .toList
   }
 
-   def mapHashTag(text: String): String = text match {
-     case text if text.contains("Java") => "Java"
-     case text if text.contains("Python") => "Python"
-     case text if text.contains("Go") => "Go"
-     case text if text.contains("Scala") => "Scala"
-     case text if text.contains("C++") => "C++"
-     case text if text.contains("Lisp") => "Lisp"
-     case text if text.contains("PHP") => "PHP"
-     case text if text.contains("JavaScript") => "JavaScript"
-     case text if text.contains("Ruby") => "Ruby"
-     case text if text.contains("Perl") => "Perl"
-   }
+  def mapHashTag(text: String): String = text match {
+    case text if text.contains("Java") => "Java"
+    case text if text.contains("Python") => "Python"
+    case text if text.contains("Go") => "Go"
+    case text if text.contains("Scala") => "Scala"
+    case text if text.contains("C++") => "C++"
+    case text if text.contains("Lisp") => "Lisp"
+    case text if text.contains("PHP") => "PHP"
+    case text if text.contains("JavaScript") => "JavaScript"
+    case text if text.contains("Ruby") => "Ruby"
+    case text if text.contains("Perl") => "Perl"
+  }
 
 
   def multiTags(status: Status): ArrayBuffer[Map[String, Any]] = {
@@ -69,6 +77,7 @@ object CollectStreaming{
     val index = 0
     for (index <- 0 to (length - 1)) {
       mapList += Map[String, Any]("hashTag" -> status.getHashtagEntities()(index).getText(), "score" -> mainSentiment(status.getText()), "timestamp" -> new DateTime(status.getCreatedAt).withZone(DateTimeZone.UTC))
+
     }
     mapList
   }
