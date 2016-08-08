@@ -28,9 +28,7 @@ assemblyMergeStrategy in assembly := {
   case _                                                   => MergeStrategy.first
 }
 
-//assemblyShadeRules in assembly := Seq(
-//  ShadeRule.rename("com.fasterxml.jackson.core.**" -> "shadeio.@1").inAll
-//)
+
 
 
 

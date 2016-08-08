@@ -20,9 +20,8 @@ class MapBeamFactory extends BeamFactory[Map[String, Any]]
 object MapBeamFactory
 {
   val BeamInstance: Beam[Map[String, Any]] = {
-    // Tranquility uses ZooKeeper (through Curator framework) for coordination.
     val logger = Logger.getLogger(classOf[MapBeamFactory])
-
+    //set druid cluster public url
     val curator = CuratorFrameworkFactory.newClient(
       "ec2-54-83-35-212.compute-1.amazonaws.com:2181",
       new BoundedExponentialBackoffRetry(100, 3000, 5)
@@ -32,7 +31,7 @@ object MapBeamFactory
     val firehosePattern = "druid:firehose:%s"
     val discoveryPath = "/druid/discovery"
     val dataSource = "test1_hashTagRankByCountWithScore"
-    val dimensions = IndexedSeq("hashTag")
+    val dimensions = IndexedSeq("hashTag", "country", "latitude", "longitude")
     val aggregators = Seq(new LongSumAggregatorFactory("score", "score"))
 
     // Expects simpleEvent.timestamp to return a Joda DateTime object.
