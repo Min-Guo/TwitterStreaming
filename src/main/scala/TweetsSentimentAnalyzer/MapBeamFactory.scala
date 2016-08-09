@@ -5,7 +5,7 @@ import com.metamx.tranquility.beam.{Beam, ClusteredBeamTuning}
 import com.metamx.tranquility.druid.{DruidBeams, DruidLocation, DruidRollup, SpecificDruidDimensions}
 import com.metamx.tranquility.spark.BeamFactory
 import io.druid.granularity.QueryGranularity
-import io.druid.query.aggregation.{CountAggregatorFactory, LongSumAggregatorFactory}
+import io.druid.query.aggregation.{CountAggregatorFactory, DoubleSumAggregatorFactory, LongSumAggregatorFactory}
 import org.apache.curator.framework.CuratorFrameworkFactory
 import org.apache.curator.retry.BoundedExponentialBackoffRetry
 import org.joda.time.{DateTime, DateTimeZone, Period}
@@ -30,9 +30,9 @@ object MapBeamFactory
     val indexService = "druid/overlord"
     val firehosePattern = "druid:firehose:%s"
     val discoveryPath = "/druid/discovery"
-    val dataSource = "test1_hashTagRankByCountWithScore"
+    val dataSource = "test_CountAggDoubleSumAgg"
     val dimensions = IndexedSeq("hashTag", "country", "latitude", "longitude")
-    val aggregators = Seq(new LongSumAggregatorFactory("score", "score"))
+    val aggregators = Seq(new CountAggregatorFactory("count"), new DoubleSumAggregatorFactory("score", "score"))
 
     // Expects simpleEvent.timestamp to return a Joda DateTime object.
     DruidBeams

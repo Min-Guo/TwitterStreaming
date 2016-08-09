@@ -61,10 +61,8 @@ object CollectStreaming{
     val mapList = ArrayBuffer[Map[String, Any]]()
     val index = 0
     for (index <- 0 to (length - 1)) {
-      println(status.getHashtagEntities()(index).getText() + "~~~~" + status.getText)
+      println(status.getHashtagEntities()(index).getText() + "~~~~~~" + mainSentiment(status.getText()))
       mapList += Map[String, Any]("hashTag" -> status.getHashtagEntities()(index).getText(), "score" -> mainSentiment(status.getText()), "timestamp" -> new DateTime(status.getCreatedAt).withZone(DateTimeZone.UTC))
-//      ,
-//      "latitude" -> status.getGeoLocation().getLatitude(), "longitude" -> status.getGeoLocation().getLongitude(), "country" -> status.getPlace().getCountryCode())
     }
     mapList
   }
@@ -87,7 +85,6 @@ object CollectStreaming{
       val enTweet = rdd.filter(_.getLang == "en")
       //Keep the tweets has hashTags
       val tagTweets = enTweet.filter(status => !status.getHashtagEntities().isEmpty)
-      tagTweets.foreach(status => println(status.getText))
       //FlatMap hashTags
       val flatTags = tagTweets.flatMap(status =>  multiTags(status))
       //pass data to Tranquility
